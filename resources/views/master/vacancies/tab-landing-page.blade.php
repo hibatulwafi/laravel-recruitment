@@ -133,28 +133,18 @@
           var selectElement = document.getElementById('vacancy_id_edit');
           selectElement.value = data.vacancy_id;
 
-          $('#section_head').val(data.section_head);
           $('#end_date_edit').val(data.end_date);
 
+          ClassicEditor
+            .create(document.querySelector('#section_head'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_head);
+            });
 
-
-          $('#editLPModal').modal('show');
-        },
-        error: function() {
-          alert('Terjadi kesalahan saat memuat data.');
-        }
-      });
-    });
-  });
-
-  ClassicEditor
-    .create(document.querySelector('#section_head'))
-
-    .catch(error => {
-      console.error(error);
-    });
-
-  ClassicEditor
+             ClassicEditor
     .create(document.querySelector('#section_1'))
     .catch(error => {
       console.error(error);
@@ -189,4 +179,17 @@
     .catch(error => {
       console.error(error);
     });
+
+
+          $('#editLPModal').modal('show');
+        },
+        error: function() {
+          alert('Terjadi kesalahan saat memuat data.');
+        }
+      });
+    });
+  });
+
+
+ 
 </script>

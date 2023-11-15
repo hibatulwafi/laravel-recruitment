@@ -9,15 +9,49 @@ use App\Http\Controllers\StaController;
 use App\Http\Controllers\SeleksiController;
 use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\CareerController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 Route::get('/', function () {
-  return redirect()->route('app.home');
+  return redirect()->route('career.index');
 });
+
+# User Area (Kandidat)
+Route::get('/career', [CareerController::class, 'index'])->name('career.index');
+Route::get('/career/detail/{id}', [CareerController::class, 'detail'])->name('career.detail');
+Route::post('/career/search/', [CareerController::class, 'search'])->name('career.search');
+Route::get('/career/about/', [CareerController::class, 'about'])->name('career.about');
+
+Route::get('/career/register', [RegisterController::class, 'search'])->name('register.index');
+Route::post('/career/register', [RegisterController::class, 'search'])->name('register.store');
+
+Route::get('/loker/{id}', [GuestController::class, 'index'])->name('loker.index');
+Route::get('/loker/seleksi-tahap-1/{id}', [GuestController::class, 'st1'])->name('loker.st1');
+Route::get('/loker/seleksi-tahap-2/{id}', [GuestController::class, 'st2'])->name('loker.st2');
+Route::get('/loker/task/{id}', [GuestController::class, 'task'])->name('loker.task');
+Route::get('/loker/seleksi-tahap-akhir/{id}', [GuestController::class, 'sta'])->name('loker.sta');
+
+Route::post('/loker/seleksi-tahap-1/', [GuestController::class, 'storeSt1'])->name('store.st1');
+Route::post('/loker/seleksi-tahap-2/', [GuestController::class, 'storeSt2'])->name('store.st2');
+Route::post('/loker/task/', [GuestController::class, 'storeTask'])->name('store.task');
+Route::post('/loker/seleksi-tahap-akhir/', [GuestController::class, 'storeSta'])->name('store.sta');
+
+Route::get('/loker/thankyou/page', [GuestController::class, 'thankyou'])->name('loker.thankyou');
+
+
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+  Route::get('/career/profil', [CareerController::class, 'index'])->name('profil.index');
+  Route::post('/career/profil', [CareerController::class, 'index'])->name('profil.store');
+  Route::get('/career/applylist', [CareerController::class, 'index'])->name('applylist.index');
+  Route::get('/career/applylist/{id}', [CareerController::class, 'index'])->name('applylist.detail');
+});
+# End User Area
 
 Route::get('/home', function () {
   return redirect()->route('app.home');
 })->name('home');
-
 
 Route::group(['prefix' => 'dashboard', 'as' => 'app.', 'middleware' => ['web', 'auth']], function () {
 
@@ -32,8 +66,6 @@ Route::group(['prefix' => 'dashboard', 'as' => 'app.', 'middleware' => ['web', '
   Route::group(
     ['prefix' => 'settings', 'as' => 'setting.'],
     function () {
-
-
       Route::get(
         'my-profile',
         function () {
@@ -62,6 +94,9 @@ Route::group(['prefix' => 'authentication', 'middleware' => 'guest'], function (
   Route::get('login', App\Http\Livewire\Authentication\Login\SimpleLoginComponent::class)->name('login');
   Route::get('register',  App\Http\Livewire\Authentication\Register\SimpleRegisterComponent::class)->name('register');
 });
+
+
+
 Route::middleware(['web', 'auth'])->group(function () {
   /** Master Data */
 
@@ -105,15 +140,7 @@ Route::middleware(['web', 'auth'])->group(function () {
   Route::get('/sta', [StaController::class, 'index'])->name('sta.index');
 });
 
-Route::get('/loker/{id}', [GuestController::class, 'index'])->name('loker.index');
-Route::get('/loker/seleksi-tahap-1/{id}', [GuestController::class, 'st1'])->name('loker.st1');
-Route::get('/loker/seleksi-tahap-2/{id}', [GuestController::class, 'st2'])->name('loker.st2');
-Route::get('/loker/task/{id}', [GuestController::class, 'task'])->name('loker.task');
-Route::get('/loker/seleksi-tahap-akhir/{id}', [GuestController::class, 'sta'])->name('loker.sta');
-
-Route::post('/loker/seleksi-tahap-1/', [GuestController::class, 'storeSt1'])->name('store.st1');
-Route::post('/loker/seleksi-tahap-2/', [GuestController::class, 'storeSt2'])->name('store.st2');
-Route::post('/loker/task/', [GuestController::class, 'storeTask'])->name('store.task');
-Route::post('/loker/seleksi-tahap-akhir/', [GuestController::class, 'storeSta'])->name('store.sta');
-
-Route::get('/loker/thankyou/page', [GuestController::class, 'thankyou'])->name('loker.thankyou');
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+});
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+});

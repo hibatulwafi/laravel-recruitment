@@ -11,7 +11,6 @@ class SimpleLoginComponent extends Component
     public $password;
     public $rememberMe = false;
 
-
     protected $rules = [
         'email' => ['required', 'email', 'exists:users,email'],
         'password' => ['required', 'min:4', 'max:6'],
@@ -28,8 +27,6 @@ class SimpleLoginComponent extends Component
 
     public function mount()
     {
-
-
         if (!app()->environment('production')) {
             $this->email = "hr@mri.co.id";
             $this->password = "1412";
@@ -40,9 +37,7 @@ class SimpleLoginComponent extends Component
     public function login()
     {
         $this->validate();
-
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->rememberMe)) {
-
             return redirect()->route('app.home');
         }
         session()->flash('error', 'Invalid Credentials');
