@@ -9,6 +9,35 @@
 </head>
 
 <body>
+
+  @php
+  $name = '';
+  $phone = '';
+  $email = '';
+  $gender = '';
+  $birthdate = '';
+  $education = '';
+  $university = '';
+  $major = '';
+  $graduation_year = '';
+  $job_status = '';
+  @endphp
+
+  @auth
+  @php
+  $name = Auth::user()->name;
+  $phone = Auth::user()->phone;
+  $email = Auth::user()->email;
+  $gender = '';
+  $birthdate = '';
+  $education = '';
+  $university = '';
+  $major = '';
+  $graduation_year = '';
+  $job_status = '';
+  @endphp
+  @endauth
+
   <style>
     body {
       background-color: #f7f7f7;
@@ -47,7 +76,7 @@
             <input type="hidden" class="form-control" id="vacancy_id" name="vacancy_id" value="{{$vacancy->vacancy_id}}">
             <input type="hidden" class="form-control" id="batch_id" name="batch_id" value="{{$batch->batch_id}}">
             <label for="name">Nama</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Jawaban Anda" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Jawaban Anda" value="{{ $name ? $name : '' }}" required>
           </div>
         </div>
       </div>
@@ -56,7 +85,7 @@
         <div class="card-body">
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Jawaban Anda" required>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Jawaban Anda" value="{{ $phone ? $phone : '' }}" required>
           </div>
         </div>
       </div>
@@ -65,7 +94,7 @@
         <div class="card-body">
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Jawaban Anda" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Jawaban Anda" value="{{ $email ? $email : '' }}" required>
           </div>
         </div>
       </div>
@@ -76,8 +105,8 @@
             <label for="gender">Jenis Kelamin</label>
             <select class="form-control" name="gender" required>
               <option value="">Pilih</option>
-              <option value="male">Laki - Laki</option>
-              <option value="female">Perempuan</option>
+              <option value="male" {{ ($profile && $profile->gender == 'male') ? 'selected' : '' }}>Laki - Laki</option>
+              <option value="female" {{ ($profile && $profile->gender == 'female') ? 'selected' : '' }}>Perempuan</option>
             </select>
           </div>
         </div>
@@ -86,8 +115,8 @@
       <div class="card mb-2">
         <div class="card-body">
           <div class="form-group">
-            <label for="email">Tanggal Lahir</label>
-            <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Jawaban Anda" required>
+            <label for="email">Tanggal Lahir</label> 
+            <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Jawaban Anda"  value="{{ $profile ? $profile->birthdate : '' }}" required>
           </div>
         </div>
       </div>

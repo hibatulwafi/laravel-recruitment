@@ -1,8 +1,10 @@
 @extends('layouts.master')
 
-@section('tab_tittle', 'Candidates')
+@section('tab_tittle', 'st2')
+@section('st2', 'active')
 
 @section('content')
+
 
 
 <div class="card">
@@ -26,7 +28,7 @@
                 @php $i = 0; @endphp
                 @foreach ($question as $key => $value)
                 <td>
-                {{$value->question}}
+                  {{$value->question}}
                 </td>
                 @endforeach
                 <th>Action</th>

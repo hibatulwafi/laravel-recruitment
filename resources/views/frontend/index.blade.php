@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-lg-4">
-              <select class="category" name="location">
+              <select class="category form-control form-select" name="location" style="height: 60px; border-radius:10px;">
                 <option data-display="lokasi">Lokasi</option>
                 @foreach($placement as $row)
                 <option value="{{$row->city}}">{{$row->city}}</option>
@@ -143,11 +143,16 @@
       <div class="col-lg-6">
         <div class="job-card-two">
           <div class="row align-items-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="job-info">
                 <h3>
                   <a href="{{ route('career.detail', ['id' => strtolower($row->position)]) }}">{{$row->position}}</a>
                 </h3>
+                <hr>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="job-info">
                 <ul>
                   <li>
                     <i class='bx bx-location-plus'></i>

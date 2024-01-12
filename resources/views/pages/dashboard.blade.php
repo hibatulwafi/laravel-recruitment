@@ -6,7 +6,7 @@
 <div class="row row-cols-1">
     <div class="overflow-hidden d-slider1 ">
         <ul class="p-0 m-0 mb-2 swiper-wrapper list-inline">
-            <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="700">
+            <!-- <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="700">
                 <div class="card-body">
                     <div class="progress-widget">
                         <div id="circle-progress-01" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="100" data-type="percent">
@@ -35,10 +35,8 @@
                         </div>
                     </div>
                 </div>
-            </li>
+            </li> -->
             
-            
-
             <!-- <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1100">
                     <div class="card-body">
                         <div class="progress-widget">
@@ -96,7 +94,7 @@
         <div class="swiper-button swiper-button-prev"></div>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-6 col-lg-6">
         <div class="card" data-aos="fade-up" data-aos-delay="600">
             <div class="flex-wrap card-header d-flex justify-content-between">
@@ -274,5 +272,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection

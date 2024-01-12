@@ -2,7 +2,7 @@
 @section('content')
 <style>
   .banner-section {
-    height: 360px !important;
+    height: 370px !important;
   }
 </style>
 <!-- Banner Section Start -->
@@ -33,8 +33,8 @@
       <div class="col-lg-12">
         <div class="why-choose-text pb-70">
           <div class="section-title-about text-center">
-            <h2> Jiwa Muda, Ingin Berkontribusi Lebih Untuk Indonesia ? <br />
-              Bergabunglah Di MERRY RIANA GROUP</h2>
+            <h2> Jiwa muda, ingin berkontribusi lebih untuk Indonesia ? <br/>
+              Bergabunglah di Merry Riana Group</h2>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
       <div class="col-lg-3 col-sm-12">
       </div>
 
-      <div class="col-lg-6 col-sm-12 mb-3">
+      <div class="col-lg-6 col-sm-12 mb-5">
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/8GLm3BE6zh8?si=qYSFGktO_sjWXav2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
         </div>
@@ -51,15 +51,13 @@
       <div class="col-lg-3 col-sm-12">
       </div>
 
-      <div class="col-lg-12 col-sm-12">
-        <p style="text-align: justify;"> Di Merry Riana Group, kami selalu mencari Warrior (sebutan kami untuk 'karyawan full-time') baru untuk bergabung dan membangun karir bersama kami. Kami mencari Warrior baru yang mau berjuang untuk mewujudkan tujuan utama kita bersama : Menciptakan dampak positif di dalam kehidupan jutaan orang di Indonesia. Untuk mencapai tujuan utama tersebut, kami fokus pada pengembangan diri Warrior supaya bisa menjadi versi diri mereka yang terbaik dan menjalani kehidupan terbaik sesuai dengan impian dan passion mereka masing-masing. Kami mencari Warrior baru yang berintegritas tinggi dan bersedia dibentuk untuk mencapai potensi terbesar dalam dirinya. </p>
-
-        <p> Apakah kamu adalah calon Warrior baru yang kami cari? </p>
-
-        <p> Kalau ya, silakan daftar sekarang untuk ikut proses seleksi kami. </p>
+      <div class="col-lg-12 col-sm-12 ">
+        <p style="text-align: justify;" class="why-choose-text"> Di Merry Riana Group, kami selalu mencari Warrior (sebutan kami untuk 'karyawan full-time') baru untuk bergabung dan membangun karir bersama kami. Kami mencari Warrior baru yang mau berjuang untuk mewujudkan tujuan utama kita bersama : Menciptakan dampak positif dari Indonesia untuk Dunia. Untuk mencapai tujuan utama tersebut, kami fokus pada pengembangan diri Warrior supaya bisa menjadi versi diri mereka yang terbaik dan menjalani kehidupan terbaik sesuai dengan impian dan passion mereka masing-masing. Kami mencari Warrior baru yang berintegritas tinggi dan bersedia dibentuk untuk mencapai potensi terbesar dalam dirinya. </p>
+        <p class="why-choose-text"> Apakah kamu adalah calon Warrior baru yang kami cari? </p>
+        <p class="why-choose-text"> Kalau ya, silakan daftar sekarang untuk ikut proses seleksi kami. </p>
       </div>
 
-      <div class="col-lg-12">
+      <div class="col-lg-12 mt-3">
         <div class="why-choose-text pb-70">
           <div class="section-title">
             <h2>Kenapa Harus MRG?</h2>

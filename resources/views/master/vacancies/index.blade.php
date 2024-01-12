@@ -61,7 +61,7 @@
 
             <label for="link">Link</label>
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon3">https://merryriana.com/loker/</span>
+              <span class="input-group-text" id="basic-addon3">https://recruitment.merryriana.com/</span>
               <input type="text" class="form-control" id="link" name="link" aria-describedby="basic-addon3" required>
             </div>
 
@@ -107,7 +107,7 @@
           <div class="form-group">
             <label for="link">Link</label>
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon3">https://merryriana.com/loker/</span>
+              <span class="input-group-text" id="basic-addon3">https://recruitment.merryriana.com/</span>
               <input type="text" class="form-control" id="link" name="link" aria-describedby="basic-addon3" value="{{ $row->segment }}" required>
             </div>
 
@@ -153,7 +153,7 @@
                 <tr>
                   <td>link</td>
                   <td>:</td>
-                  <td>https://merryriana.com/loker/{{ $row->segment }}</td>
+                  <td>https://recruitment.merryriana.com/{{ $row->segment }}</td>
                 </tr>
                 <tr>
                   <td>Status</td>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
@@ -72,9 +73,20 @@ class GuestController extends Controller
             ->orderBy('batch_vacancies.batch_id', 'DESC')
             ->first();
 
+        if (Auth::check()) {
+            $id = Auth::user()->id;
+            $type = Auth::user()->type;
+            if ($type == 'user') {
+                $profile  = DB::table('users_profile')->where('user_id', $id)->first();
+            } else {
+                $profile = null;
+            }
+        } else {
+            $profile = null;
+        }
         if ($vacancy) {
             if ($batch) {
-                return view('guest.st1', ['vacancy' => $vacancy, 'batch' => $batch]);
+                return view('guest.st1', ['vacancy' => $vacancy, 'batch' => $batch, 'profile' => $profile]);
             } else {
                 dd('Batch tidak ditemukan');
             }

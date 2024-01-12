@@ -20,6 +20,18 @@ class VacancyController extends Controller
 
         return view('master.vacancies.index', compact('vacancies', 'lp', 'batch', 'collapse', 'position', 'date'));
     }
+    public function lokerAktif()
+    {
+        $collapse  = 'loker-aktif';
+        $date      = Carbon::now()->format('d/m/Y');
+        $vacancies = DB::table('job_vacancies')->get();
+        $position  = DB::table('job_vacancies')->where('status', 'active')->get();
+        $lp        = DB::table('landing_pages')->join('job_vacancies', 'job_vacancies.vacancy_id', 'landing_pages.vacancy_id')->get();
+        $batch     = DB::table('batch_vacancies')->join('job_vacancies', 'job_vacancies.vacancy_id', 'batch_vacancies.vacancy_id')->where('batch_vacancies.end_date', '>=', Carbon::now()->subMonth(1))->where('batch_vacancies.status', '1')->get();
+        $berakhir  = DB::table('batch_vacancies')->join('job_vacancies', 'job_vacancies.vacancy_id', 'batch_vacancies.vacancy_id')->where('batch_vacancies.end_date', '<', Carbon::now()->subMonth(1))->where('batch_vacancies.status', '1')->get();
+
+        return view('selection.loker-aktif.index', compact('vacancies', 'lp', 'batch', 'collapse', 'position', 'date', 'berakhir'));
+    }
 
     public function store(Request $request)
     {

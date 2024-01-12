@@ -20,7 +20,7 @@
                                         transform="rotate(45 10.5562 -0.556152)" fill="currentColor"></rect>
                                 </svg>
                                 <!--logo End-->
-                                <h4 class="logo-title ms-3">Sai Starter Kit</h4>
+                                <h4 class="logo-title ms-3">MRG Recruitment</h4>
                             </a>
                             <h2 class="mb-2 text-center">Sign Up</h2>
                             <p class="text-center">Create your account.</p>

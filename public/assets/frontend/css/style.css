@@ -65,6 +65,7 @@ This files table contents are outlined below>>>>>
 body {
   font-size: 17px;
   font-family: "IBM Plex Sans", sans-serif;
+  /* font-family: "Helvetica", sans-serif; */
   color: #707070;
   line-height: 1.6;
 }
@@ -173,7 +174,7 @@ h3 {
   font-weight: 600;
   margin: 0 auto 10px;
   line-height: 1;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 
 
@@ -190,7 +191,7 @@ h3 {
   color: #ffffff;
   margin-right: 15px;
   border: 1px solid transparent;
-  padding: 10px 25px;
+  padding: 10px 15px;
   display: inline-block;
   border-radius: 10px 10px 10px 10px;
 }
@@ -536,12 +537,12 @@ h3 {
 /* Category Section CSS End */
 /* Job Section CSS Start */
 .job-card {
-  border: 1px dashed #d9dbdf;
+  border: 2px dashed #d9dbdf;
   padding: 30px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-bottom: 30px;
-  background: #fde7e7;
+  background: #ffffff;
 }
 
 .job-card .thumb-img {
@@ -2629,7 +2630,7 @@ h3 {
 .page-title::before {
   position: absolute;
   content: '';
-  background: rgba(1, 12, 41, 0.85);
+  background: rgba(1, 12, 41, 0.678);
   width: 100%;
   height: 100%;
   top: 0;
@@ -2651,7 +2652,9 @@ h3 {
   padding: 10px;
   border: 1px solid rgba(132, 137, 152, 0.5);
   border-radius: 30px;
+
 }
+
 
 .page-title ul li {
   color: #ffffff;
@@ -2668,7 +2671,7 @@ h3 {
   top: 4px;
   font-family: 'boxicons';
   font-size: 22px;
-  line-height: 1;
+  /* line-height: 1; */
 }
 
 .page-title ul li:last-child::before {
@@ -3720,11 +3723,16 @@ h3 {
   background-image: url(../img/title-bg/12.jpg);
 }
 
+.signin-section {
+  background-color: #dbdbdb;
+}
+
 .signin-form {
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   padding: 50px;
   border-radius: 30px;
+  background-color: #ffffff;
 }
 
 .signin-form .form-group {
@@ -3827,7 +3835,11 @@ h3 {
 /*---------- Sign In CSS End ----------*/
 /*---------- Sign Up CSS Start ----------*/
 .page-title.title-bg13 {
-  background-image: url(../img/title-bg/13.jpg);
+  background-image: url(../img/banner/5.jpg);
+}
+
+.signup-section {
+  background-color: #dbdbdb;
 }
 
 .signup-form {
@@ -3835,6 +3847,7 @@ h3 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   padding: 50px;
   border-radius: 30px;
+  background-color: #ffffff;
 }
 
 .signup-form .form-group {
@@ -4324,8 +4337,12 @@ h3 {
 }
 
 .blog-widget.blog-category ul li {
-  list-style: circle;
+  list-style: none;
   margin-bottom: 5px;
+  border: 1px dashed #001935;
+  color: #001935;
+  font-size: 15px;
+  padding: 5px 15px;
 }
 
 .blog-widget.blog-category ul li a {
@@ -4954,6 +4971,150 @@ h3 {
 .horizontal-list li {
   margin-right: 20px;
   /* Jarak antara elemen daftar horizontal */
+}
+
+.captcha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  right: 15px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(35%);
+  cursor: pointer;
+}
+
+
+.mobile-item {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .mobile-item {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile-item {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .mobile-item {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1800px) {
+  .mobile-item {
+    display: none !important;
+  }
+}
+
+
+.name-auth {
+  color: #fff1f1;
+}
+
+.notification-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-icon .badge {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  background-color: red;
+  /* Warna latar belakang notifikasi */
+  color: white;
+  /* Warna teks notifikasi */
+  border-radius: 50%;
+  padding: 4px 6px;
+  /* Sesuaikan padding sesuai kebutuhan */
+  font-size: 8px;
+  /* Sesuaikan ukuran font sesuai kebutuhan */
+}
+
+.badge-item {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.bg-gray {
+  background-color: rgb(247, 247, 247);
+}
+
+.bg-gray-dark {
+  background-color: rgb(209, 209, 209);
+}
+
+.bg-white {
+  background-color: rgb(255, 255, 255);
+}
+
+.bg-blue {
+  background-color: #bcccfad2;
+}
+
+.bg-btn-blue {
+  background: #0069D9 !important;
+}
+
+.bg-btn-blue:hover {
+  background: #001935 !important;
+  border: 1px solid #ffffff !important;
+}
+
+.bg-btn-green {
+  background: #28a745 !important;
+}
+
+.bg-btn-green:hover {
+  background: #1c6d2f !important;
+  border: 1px solid #ffffff !important;
+}
+
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  /* Tombol tidak terlihat awalnya */
+  transition: opacity 0.3s ease;
+}
+
+.profile-container:hover .edit-button {
+  opacity: 1;
+  /* Tampilkan tombol saat gambar dihover */
 }
 
 /* Animation CSS End */

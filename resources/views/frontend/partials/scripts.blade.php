@@ -4,7 +4,7 @@
 <!-- Owl Carousel JS -->
 <script src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
 <!-- Nice Select JS -->
-<script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js') }}"></script>
+<!-- <script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js') }}"></script> -->
 <!-- Magnific Popup JS -->
 <script src="{{ asset('assets/frontend/js/jquery.magnific-popup.min.js') }}"></script>
 <!-- Subscriber Form JS -->
@@ -17,3 +17,4 @@
 <script src="{{ asset('assets/frontend/js/meanmenu.js') }}"></script>
 <!-- Custom JS -->
 <script src="{{ asset('assets/frontend/js/custom.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/intlTelInput.js') }}"></script>

@@ -35,7 +35,7 @@
           <tr>
             <td class="text-center">{{ $i }}</td>
             <td>{{ $row->position }}</td>
-            <td><a href="https://merryriana.com/loker/{{ $row->segment }}" target="_BLANK">https://merryriana.com/loker/{{ $row->segment }}</a></td>
+            <td><a href="https://recruitment.merryriana.com/loker/{{ $row->segment }}" target="_BLANK">https://recruitment.merryriana.com/loker/{{ $row->segment }}</a></td>
             <td>{{ $row->section_head }}</td>
             <td class="text-center">...</td>
             <td class="text-center">
@@ -121,6 +121,7 @@
   $(document).ready(function() {
     $('.edit-landingpage-btn').click(function() {
       var primaryId = $(this).data('id');
+
       $.ajax({
         url: "{{ url('lp/detail')}}/" + primaryId,
         type: 'GET',
@@ -144,42 +145,59 @@
               editor.setData(data.section_head);
             });
 
-             ClassicEditor
-    .create(document.querySelector('#section_1'))
-    .catch(error => {
-      console.error(error);
-    });
+          ClassicEditor
+            .create(document.querySelector('#section_1'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_1);
+            });
 
-  ClassicEditor
-    .create(document.querySelector('#section_2'))
-    .catch(error => {
-      console.error(error);
-    });
+          ClassicEditor
+            .create(document.querySelector('#section_2'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_2);
+            });
 
-  ClassicEditor
-    .create(document.querySelector('#section_3'))
-    .catch(error => {
-      console.error(error);
-    });
+          ClassicEditor
+            .create(document.querySelector('#section_3'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_3);
+            });
 
-  ClassicEditor
-    .create(document.querySelector('#section_4'))
-    .catch(error => {
-      console.error(error);
-    });
+          ClassicEditor
+            .create(document.querySelector('#section_4'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_4);
+            });
 
-  ClassicEditor
-    .create(document.querySelector('#section_5'))
-    .catch(error => {
-      console.error(error);
-    });
+          ClassicEditor
+            .create(document.querySelector('#section_5'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_5);
+            });
 
-  ClassicEditor
-    .create(document.querySelector('#section_6'))
-    .catch(error => {
-      console.error(error);
-    });
-
+          ClassicEditor
+            .create(document.querySelector('#section_6'))
+            .catch(error => {
+              console.error(error);
+            })
+            .then(editor => {
+              editor.setData(data.section_6);
+            });
 
           $('#editLPModal').modal('show');
         },
@@ -189,7 +207,4 @@
       });
     });
   });
-
-
- 
 </script>

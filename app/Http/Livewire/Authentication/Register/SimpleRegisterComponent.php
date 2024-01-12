@@ -9,13 +9,11 @@ use Livewire\Component;
 
 class SimpleRegisterComponent extends Component
 {
-
     public $fullName;
     public $email;
     public $password;
     public $password_confirmation;
     public $rememberMe = false;
-
 
     protected $rules = [
         'fullName' => ['required', 'alpha_dash'],
@@ -31,16 +29,11 @@ class SimpleRegisterComponent extends Component
 
     public function updated($propertyName)
     {
-
         $this->validateOnly($propertyName);
     }
 
-
-
-
     public function mount()
     {
-
         if (!app()->environment('production')) {
             $this->fullName = "localUser" . rand(999, 9999);
             $this->email = "user" . rand(999, 9999) . "@zerocode.com";
@@ -52,9 +45,18 @@ class SimpleRegisterComponent extends Component
 
     public function register()
     {
-
         $this->validate();
+        $user = User::create([
+            "name" => $this->fullName,
+            "email" => $this->email,
+            "password" => Hash::make($this->password),
+        ]);
+        Auth::login($user, $this->rememberMe);
+        return redirect()->route('app.home');
+    }
 
+    public function register_user()
+    {
         $user = User::create([
             "name" => $this->fullName,
             "email" => $this->email,

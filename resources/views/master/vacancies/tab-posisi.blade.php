@@ -33,7 +33,7 @@
           <tr>
             <td class="text-center">{{ $i }}</td>
             <td>{{ $row->position }}</td>
-            <td><a href="https://merryriana.com/loker/{{ $row->segment }}" target="_BLANK">https://merryriana.com/loker/{{ $row->segment }}</a></td>
+            <td><a href="https://recruitment.merryriana.com/loker/{{ $row->segment }}" target="_BLANK">https://recruitment.merryriana.com/loker/{{ $row->segment }}</a></td>
             <td class="text-center"><span class="badge rounded-pill bg-{{ $row->status == 'active' ? 'success' : 'danger' }}">
                 {{ $row->status }}</span>
             </td>

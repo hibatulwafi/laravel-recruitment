@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
-@section('tab_tittle', 'qst2')
+@section('tab_tittle', 'question')
+@section('question','active')
 
 @section('content')
 
@@ -8,7 +9,8 @@
 <div class="card">
   <div class="card-header d-flex justify-content-between">
     <div class="header-title">
-      <h4 class="card-title">Question</h4>
+      <h4 class="card-title">Pertanyaan</h4>
+      <small>Data master > <font style="color:#002732;">Pertanyaan</font></small>
     </div>
   </div>
   <div class="card-body">
@@ -17,15 +19,101 @@
     <div class="bd-example">
       <ul class="nav nav-pills" data-toggle="slider-tab" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="st2-tab" data-bs-toggle="tab" data-bs-target="#pills-st21" type="button" role="tab" aria-controls="st2" aria-selected="true">ST2</button>
+          <button class="nav-link active" id="st1-tab" data-bs-toggle="tab" data-bs-target="#pills-st11" type="button" role="tab" aria-controls="st1" aria-selected="true">ST1</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="st2-tab" data-bs-toggle="tab" data-bs-target="#pills-st21" type="button" role="tab" aria-controls="st2" aria-selected="true">ST2</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="sta-tab" data-bs-toggle="tab" data-bs-target="#pills-sta1" type="button" role="tab" aria-controls="sta" aria-selected="false">STA</button>
         </li>
       </ul>
       <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-st21" role="tabpanel" aria-labelledby="pills-st2-tab1">
-          <!-- Nav Content 1 -->
+        <div class="tab-pane fade show active" id="pills-st11" role="tabpanel" aria-labelledby="pills-st1-tab1">
+          <!-- Nav Content 2 -->
+
+          <div class="row">
+            <div class="col-6">
+              <p>Pertanyaan Seleksi Tahap 1 Merry Riana Group</p>
+            </div>
+
+            <div class="col-12 mt-3">
+              <div class="table-responsive">
+                <table id="datatable" class="table table-striped table-bordered" data-toggle="data-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Pertanyaan</th>
+                      <th>Posisi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td class="text-center">1</td>
+                      <td>Nama</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">2</td>
+                      <td>Phone</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">3</td>
+                      <td>Email</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">4</td>
+                      <td>Jenis Kelamin</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">5</td>
+                      <td>Tanggal Lahir</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">6</td>
+                      <td>Pendidikan Terakhir</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">7</td>
+                      <td>Nama Universitas / Sekolah</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">8</td>
+                      <td>Jurusan Kuliah</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">9</td>
+                      <td>Tahun Kelulusan</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">10</td>
+                      <td>Status Pekerjaan</td>
+                      <td>All</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">11</td>
+                      <td>Referral</td>
+                      <td>All</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- End Nav Content 1 -->
+        </div>
+        <div class="tab-pane fade show" id="pills-st21" role="tabpanel" aria-labelledby="pills-st2-tab1">
+          <!-- Nav Content 2 -->
 
           <div class="row">
             <div class="col-6">
@@ -42,9 +130,9 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Question</th>
-                      <th>Position</th>
-                      <th>Action</th>
+                      <th>Pertanyaan</th>
+                      <th>Posisi</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -78,11 +166,11 @@
             </div>
           </div>
 
-          <!-- End Nav Content 1 -->
+          <!-- End Nav Content 2 -->
 
         </div>
         <div class="tab-pane fade" id="pills-sta1" role="tabpanel" aria-labelledby="pills-sta-tab1">
-          <!-- Nav Content 2 -->
+          <!-- Nav Content 3 -->
           <div class="row">
             <div class="col-6">
               <p>Pertanyaan Seleksi Tahap Akhir Merry Riana Group</p>
@@ -98,9 +186,9 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Question</th>
-                      <th>Position</th>
-                      <th>Action</th>
+                      <th>Pertanyaan</th>
+                      <th>Posisi</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -133,7 +221,7 @@
               </div>
             </div>
           </div>
-          <!-- End Nav Content 2 -->
+          <!-- End Nav Content 3 -->
 
         </div>
       </div>
@@ -147,14 +235,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add Question (ST2)</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Tambah Pertanyaan (ST2)</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="POST" action="{{ route('question.store') }}">
         <div class="modal-body">
           @csrf
           <div class="form-group">
-            <label for="position">Question</label>
+            <label for="position">Pertanyaan</label>
             <input type="hidden" class="form-control" id="type" name="type" value="st2" required>
             <textarea type="text" class="form-control" id="question" name="question" required></textarea>
           </div>
@@ -175,14 +263,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add Question (STA)</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Add Pertanyaan (STA)</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="POST" action="{{ route('question.store') }}">
         <div class="modal-body">
           @csrf
           <div class="form-group">
-            <label for="position">Question</label>
+            <label for="position">Pertanyaan</label>
             <input type="hidden" class="form-control" id="type" name="type" value="sta" required>
             <textarea type="text" class="form-control" id="question" name="question" required></textarea>
           </div>
@@ -218,7 +306,7 @@ $type = 'st2';
           @csrf
           @method('PUT')
           <div class="form-group">
-            <label for="position">Question</label>
+            <label for="position">Pertanyaan</label>
             <input type="text" class="form-control" id="question" name="question" value="{{ $row->question }}">
           </div>
           <button type="submit" class="btn btn-primary">Save</button>
@@ -246,7 +334,7 @@ $type = 'sta';
           @csrf
           @method('PUT')
           <div class="form-group">
-            <label for="position">Question</label>
+            <label for="position">Pertanyaan</label>
             <input type="text" class="form-control" id="question" name="question" value="{{ $row->question }}">
           </div>
           <button type="submit" class="btn btn-primary">Save</button>

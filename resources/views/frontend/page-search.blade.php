@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-lg-4">
-              <select class="category" name="location">
+              <select class="category form-control form-select" name="location" style="height: 60px; border-radius:10px;">
                 <option data-display="lokasi">Lokasi</option>
                 @foreach($placement as $row)
                 <option value="{{$row->city}}" {{ $data['location'] == $row->city ? 'selected' : '' }}>{{$row->city}}</option>
